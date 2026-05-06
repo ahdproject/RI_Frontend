@@ -31,7 +31,7 @@ export default function ProductsList() {
 
   if (loading) return (
     <div className="flex items-center justify-center h-64">
-      <Loader2 size={28} className="animate-spin text-amber-500" />
+      <Loader2 size={28} className="animate-spin text-blue-500" />
     </div>
   )
 
@@ -40,7 +40,7 @@ export default function ProductsList() {
 
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Products</h1>
+          <h1 className="text-xl font-bold text-black">Products</h1>
           <p className="text-gray-600 text-sm mt-1">
             {products.length} product{products.length !== 1 ? 's' : ''} in master
           </p>
@@ -107,13 +107,13 @@ export default function ProductsList() {
                     </td>
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-2.5">
-                        <div className="w-8 h-8 rounded-lg bg-amber-500/10
-                                        border border-amber-500/20 flex items-center
+                        <div className="w-8 h-8 rounded-lg bg-blue-500/10
+                                        border border-blue-500/20 flex items-center
                                         justify-center shrink-0">
-                          <Package size={14} className="text-amber-400" />
+                          <Package size={14} className="text-blue-400" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-black">
                             {p.name}
                           </p>
                           {p.description && (
@@ -131,7 +131,7 @@ export default function ProductsList() {
                     <td className="px-4 py-3 text-gray-600 uppercase text-xs">
                       {p.unit}
                     </td>
-                    <td className="px-4 py-3 font-semibold text-amber-400">
+                    <td className="px-4 py-3 font-semibold text-blue-400">
                       {formatCurrency(p.default_rate)}
                     </td>
                     <td className="px-4 py-3">

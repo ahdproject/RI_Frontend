@@ -27,7 +27,7 @@ export default function ChargeTypesList() {
 
   if (loading) return (
     <div className="flex items-center justify-center h-64">
-      <Loader2 size={28} className="animate-spin text-amber-500" />
+      <Loader2 size={28} className="animate-spin text-blue-500" />
     </div>
   )
 
@@ -36,7 +36,7 @@ export default function ChargeTypesList() {
 
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Charge Types</h1>
+          <h1 className="text-xl font-bold text-black">Charge Types</h1>
           <p className="text-gray-600 text-sm mt-1">
             Optional charges added to bills (Packing, Labour, Transport etc.)
           </p>
@@ -75,7 +75,7 @@ export default function ChargeTypesList() {
                   <Tag size={15} className="text-gray-600" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-sm font-semibold text-black">
                     {type.name}
                   </p>
                   <span className={type.is_active

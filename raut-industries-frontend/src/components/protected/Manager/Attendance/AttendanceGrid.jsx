@@ -19,7 +19,7 @@ const STATUS_CYCLE  = ['present', 'absent', 'half_day', 'leave']
 const STATUS_STYLES = {
   present:  'bg-emerald-500/20 text-emerald-400 border-emerald-500/30 hover:bg-emerald-500/30',
   absent:   'bg-red-500/20     text-red-400     border-red-500/30     hover:bg-red-500/30',
-  half_day: 'bg-amber-500/20   text-amber-400   border-amber-500/30   hover:bg-amber-500/30',
+  half_day: 'bg-blue-500/20   text-blue-400   border-blue-500/30   hover:bg-blue-500/30',
   leave:    'bg-blue-500/20    text-blue-400    border-blue-500/30    hover:bg-blue-500/30',
   unmarked: 'bg-gray-100/60   text-gray-600    border-gray-200/30    hover:bg-gray-700/40',
 }
@@ -279,7 +279,7 @@ export default function AttendanceGrid() {
       {/* Page header */}
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-black">
             Attendance Register
           </h1>
           <p className="text-gray-600 text-sm mt-1">
@@ -292,17 +292,17 @@ export default function AttendanceGrid() {
           <div className="flex items-center gap-1 card px-3 py-2">
             <button
               onClick={prevMonth}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-black transition-colors"
             >
               <ChevronLeft size={16} />
             </button>
-            <span className="text-sm font-semibold text-gray-900 w-28
+            <span className="text-sm font-semibold text-black w-28
                              text-center">
               {monthName(month)} {year}
             </span>
             <button
               onClick={nextMonth}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-black transition-colors"
             >
               <ChevronRight size={16} />
             </button>
@@ -352,15 +352,15 @@ export default function AttendanceGrid() {
       {/* Pending changes banner */}
       {pendingCount > 0 && (
         <div className="flex items-center justify-between
-                        bg-amber-500/10 border border-amber-500/30
+                        bg-blue-500/10 border border-blue-500/30
                         rounded-xl px-4 py-3">
-          <p className="text-sm text-amber-400 font-medium">
+          <p className="text-sm text-blue-400 font-medium">
             {pendingCount} unsaved change{pendingCount !== 1 ? 's' : ''}
           </p>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setPending({})}
-              className="text-xs text-gray-600 hover:text-gray-900
+              className="text-xs text-gray-600 hover:text-black
                          transition-colors"
             >
               Discard
@@ -418,7 +418,7 @@ export default function AttendanceGrid() {
                                       whitespace-nowrap
                                       ${isWeekend ? 'bg-gray-100/80' : ''}
                                       ${isToday
-                                        ? 'text-amber-400'
+                                        ? 'text-blue-400'
                                         : isWeekend
                                           ? 'text-gray-600'
                                           : 'text-gray-600'
@@ -466,17 +466,17 @@ export default function AttendanceGrid() {
                         className={`border-b border-gray-200/40
                                     transition-colors
                                     ${hasPending
-                                      ? 'bg-amber-500/5'
+                                      ? 'bg-blue-500/5'
                                       : 'hover:bg-gray-100/20'
                                     }`}
                       >
                         {/* Employee name */}
                         <td className="sticky left-0 z-10 bg-gray-100
                                        border-r border-gray-200 px-4 py-2.5">
-                          <p className="font-semibold text-gray-900 whitespace-nowrap">
+                          <p className="font-semibold text-black whitespace-nowrap">
                             {emp.name}
                             {hasPending && (
-                              <span className="ml-2 text-[9px] text-amber-400
+                              <span className="ml-2 text-[9px] text-blue-400
                                                font-bold">
                                 UNSAVED
                               </span>
@@ -501,7 +501,7 @@ export default function AttendanceGrid() {
                               key={d}
                               className={`px-0.5 py-1.5 text-center
                                           ${isWeekend ? 'bg-gray-100/20' : ''}
-                                          ${changed ? 'bg-amber-500/5' : ''}`}
+                                          ${changed ? 'bg-blue-500/5' : ''}`}
                             >
                               <div className="relative inline-block">
                                 <StatusCell
@@ -515,7 +515,7 @@ export default function AttendanceGrid() {
                                 {changed && (
                                   <span className="absolute -top-0.5 -right-0.5
                                                    w-1.5 h-1.5 rounded-full
-                                                   bg-amber-400" />
+                                                   bg-blue-400" />
                                 )}
                               </div>
                             </td>
@@ -539,7 +539,7 @@ export default function AttendanceGrid() {
                             <div className="flex items-center justify-center
                                             gap-2">
                               {H > 0 && (
-                                <span className="text-amber-400 font-medium">
+                                <span className="text-blue-400 font-medium">
                                   {H}H
                                 </span>
                               )}

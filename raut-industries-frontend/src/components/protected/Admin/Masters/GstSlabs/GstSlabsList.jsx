@@ -112,16 +112,16 @@ export default function GstSlabsList() {
                 )
                 : slabs.map((slab) => (
                   <tr key={slab.id} className="table-row-hover">
-                    <td className="px-4 py-3 font-semibold text-gray-900">
+                    <td className="px-4 py-3 font-semibold text-black">
                       {slab.label}
                     </td>
-                    <td className="px-4 py-3 text-gray-900">
+                    <td className="px-4 py-3 text-black">
                       {slab.cgst_rate}%
                     </td>
-                    <td className="px-4 py-3 text-gray-900">
+                    <td className="px-4 py-3 text-black">
                       {slab.sgst_rate}%
                     </td>
-                    <td className="px-4 py-3 text-gray-900">
+                    <td className="px-4 py-3 text-black">
                       {slab.igst_rate}%
                     </td>
                     <td className="px-4 py-3">
@@ -137,8 +137,8 @@ export default function GstSlabsList() {
                             `/admin/masters/gst-slabs/${slab.id}/edit`
                           )}
                           className="w-7 h-7 flex items-center justify-center
-                                     rounded-lg text-gray-600 hover:text-amber-400
-                                     hover:bg-amber-500/10 transition-colors"
+                                     rounded-lg text-gray-600 hover:text-blue-400
+                                     hover:bg-blue-500/10 transition-colors"
                           title="Edit"
                         >
                           <Pencil size={13} />

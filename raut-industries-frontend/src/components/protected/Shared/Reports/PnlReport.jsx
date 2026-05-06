@@ -68,7 +68,7 @@ export default function PnlReport() {
           label="Net Profit"
           value={formatCurrency(profit.net_profit)}
           sub="Gross − Expenses"
-          color="text-amber-400"
+          color="text-blue-400"
         />
         <ReportKpi
           label="GST Payable"
@@ -94,7 +94,7 @@ export default function PnlReport() {
             <PLRow
               label="Total with GST"
               value={formatCurrency(sales.total_with_gst)}
-              color="text-amber-400"
+              color="text-blue-400"
               border
             />
           </div>
@@ -136,7 +136,7 @@ export default function PnlReport() {
           <p className="text-xs text-gray-600 uppercase tracking-wide">
             Total Weight Processed
           </p>
-          <p className="text-2xl font-bold text-gray-900 mt-1">
+          <p className="text-2xl font-bold text-black mt-1">
             {Number(sales.total_pieces || 0).toLocaleString('en-IN')} pcs
           </p>
         </div>

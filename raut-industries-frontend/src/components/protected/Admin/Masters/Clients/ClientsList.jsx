@@ -36,7 +36,7 @@ export default function ClientsList() {
 
   if (loading) return (
     <div className="flex items-center justify-center h-64">
-      <Loader2 size={28} className="animate-spin text-amber-500" />
+      <Loader2 size={28} className="animate-spin text-blue-500" />
     </div>
   )
 
@@ -45,7 +45,7 @@ export default function ClientsList() {
 
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Clients</h1>
+          <h1 className="text-xl font-bold text-black">Clients</h1>
           <p className="text-gray-600 text-sm mt-1">
             {clients.length} client{clients.length !== 1 ? 's' : ''} registered
           </p>
@@ -113,7 +113,7 @@ export default function ClientsList() {
                           <Building2 size={14} className="text-blue-400" />
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-black">
                             {c.name}
                           </p>
                           {c.address && (

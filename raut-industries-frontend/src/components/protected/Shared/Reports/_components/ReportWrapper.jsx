@@ -17,16 +17,16 @@ export const MonthYearPicker = ({ month, year, onChange }) => {
     <div className="flex items-center gap-1 card px-3 py-2">
       <button
         onClick={prev}
-        className="text-gray-600 hover:text-gray-900 transition-colors"
+        className="text-gray-600 hover:text-black transition-colors"
       >
         <ChevronLeft size={16} />
       </button>
-      <span className="text-sm font-semibold text-gray-900 w-32 text-center">
+      <span className="text-sm font-semibold text-black w-32 text-center">
         {monthName(month)} {year}
       </span>
       <button
         onClick={next}
-        className="text-gray-600 hover:text-gray-900 transition-colors"
+        className="text-gray-600 hover:text-black transition-colors"
       >
         <ChevronRight size={16} />
       </button>
@@ -42,7 +42,7 @@ export const ReportPage = ({
   <div className="space-y-5">
     <div className="page-header">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">{title}</h1>
+        <h1 className="text-xl font-bold text-black">{title}</h1>
         {subtitle && (
           <p className="text-gray-600 text-sm mt-1">{subtitle}</p>
         )}
@@ -57,7 +57,7 @@ export const ReportPage = ({
     {loading
       ? (
         <div className="flex items-center justify-center h-48">
-          <Loader2 size={28} className="animate-spin text-amber-500" />
+          <Loader2 size={28} className="animate-spin text-blue-500" />
         </div>
       )
       : error
@@ -76,7 +76,7 @@ export const ReportPage = ({
 )
 
 // ─── KPI card used inside reports ────────────────────────────
-export const ReportKpi = ({ label, value, sub, color = 'text-gray-900' }) => (
+export const ReportKpi = ({ label, value, sub, color = 'text-black' }) => (
   <div className="card px-5 py-4 space-y-1">
     <p className="text-xs text-gray-600 uppercase tracking-wide font-medium">
       {label}
@@ -100,7 +100,7 @@ export const ReportSection = ({ title, children }) => (
 
 // ─── P&L row ──────────────────────────────────────────────────
 export const PLRow = ({
-  label, value, color = 'text-gray-900',
+  label, value, color = 'text-black',
   border = false, highlight = false,
 }) => (
   <div className={`flex justify-between items-center py-2.5
@@ -109,7 +109,7 @@ export const PLRow = ({
                      : 'border-b border-gray-200/40'
                    }
                    ${highlight ? 'bg-gray-100/30 px-4 -mx-4 rounded-lg' : ''}`}>
-    <span className={`text-sm ${highlight ? 'font-semibold text-gray-900' : 'text-gray-600'}`}>
+    <span className={`text-sm ${highlight ? 'font-semibold text-black' : 'text-gray-600'}`}>
       {label}
     </span>
     <span className={`text-sm font-semibold ${color}`}>{value}</span>

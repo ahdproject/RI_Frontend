@@ -149,7 +149,7 @@ export default function BillsList() {
             <button
               onClick={() => setSearch('')}
               className="absolute right-3 top-1/2 -translate-y-1/2
-                         text-gray-600 hover:text-gray-900"
+                         text-gray-600 hover:text-black"
             >
               <X size={13} />
             </button>
@@ -197,10 +197,10 @@ export default function BillsList() {
       {confirmed.length > 0 && (
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {[
-            { label: 'Subtotal',    value: formatCurrency(totals.subtotal), color: 'text-gray-900' },
+            { label: 'Subtotal',    value: formatCurrency(totals.subtotal), color: 'text-black' },
             { label: 'GST',         value: formatCurrency(totals.gst),      color: 'text-gray-600' },
-            { label: 'Total',       value: formatCurrency(totals.total),    color: 'text-amber-400' },
-            { label: 'Pieces',      value: formatNumber(totals.pieces, 0),  color: 'text-gray-900' },
+            { label: 'Total',       value: formatCurrency(totals.total),    color: 'text-blue-400' },
+            { label: 'Pieces',      value: formatNumber(totals.pieces, 0),  color: 'text-black' },
           ].map((s) => (
             <div key={s.label}
               className="card px-4 py-3 flex items-center
@@ -282,8 +282,8 @@ export default function BillsList() {
                             {bill.status === 'draft' && (
                               <button
                                 onClick={() => navigate(`/bills/${bill.id}/edit`)}
-                                className="text-xs text-gray-600 hover:text-amber-400
-                                           px-2 py-1 rounded hover:bg-amber-500/10
+                                className="text-xs text-gray-600 hover:text-blue-400
+                                           px-2 py-1 rounded hover:bg-blue-500/10
                                            transition-colors font-medium"
                               >
                                 Edit

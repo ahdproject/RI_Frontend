@@ -39,18 +39,18 @@ const PreviewPanel = ({ preview, calculating }) => {
           Live Calculation
         </p>
         {calculating && (
-          <Loader2 size={13} className="animate-spin text-amber-400" />
+          <Loader2 size={13} className="animate-spin text-blue-400" />
         )}
       </div>
 
       {preview && (
         <>
           {[
-            { label: 'Subtotal (excl. GST)', value: formatCurrency(preview.totals?.subtotal),         color: 'text-gray-900' },
+            { label: 'Subtotal (excl. GST)', value: formatCurrency(preview.totals?.subtotal),         color: 'text-black' },
             { label: 'CGST',                 value: formatCurrency(preview.totals?.cgst_total),        color: 'text-gray-600' },
             { label: 'SGST',                 value: formatCurrency(preview.totals?.sgst_total),        color: 'text-gray-600' },
             { label: 'IGST',                 value: formatCurrency(preview.totals?.igst_total),        color: 'text-gray-600' },
-            { label: 'Total with GST',        value: formatCurrency(preview.totals?.total_with_gst),   color: 'text-amber-400 font-bold' },
+            { label: 'Total with GST',        value: formatCurrency(preview.totals?.total_with_gst),   color: 'text-blue-400 font-bold' },
           ].map((r) => (
             <div key={r.label} className="flex justify-between items-center
                                           text-xs border-b border-gray-200/50 pb-2">
@@ -62,7 +62,7 @@ const PreviewPanel = ({ preview, calculating }) => {
           <div className="pt-1 space-y-1.5">
             <div className="flex justify-between text-xs">
               <span className="text-gray-600">Other Charges</span>
-              <span className="text-gray-900">
+              <span className="text-black">
                 {formatCurrency(preview.totals?.other_charges_total)}
               </span>
             </div>
@@ -74,16 +74,16 @@ const PreviewPanel = ({ preview, calculating }) => {
               </span>
             </div>
             <div className="flex justify-between text-xs
-                            bg-amber-500/10 border border-amber-500/20
+                            bg-blue-500/10 border border-blue-500/20
                             rounded-lg px-3 py-2">
-              <span className="text-amber-400 font-medium">Per Piece</span>
-              <span className="text-amber-400 font-bold">
+              <span className="text-blue-400 font-medium">Per Piece</span>
+              <span className="text-blue-400 font-bold">
                 {formatCurrency(preview.totals?.per_piece_value)}
               </span>
             </div>
             <div className="flex justify-between text-xs pt-1">
               <span className="text-gray-600">Total Pieces</span>
-              <span className="text-gray-900">
+              <span className="text-black">
                 {formatNumber(preview.totals?.total_pieces, 0)}
               </span>
             </div>
@@ -296,13 +296,13 @@ export default function BillForm() {
           <button
             onClick={() => navigate('/bills')}
             className="w-8 h-8 flex items-center justify-center rounded-lg
-                       text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                       text-gray-600 hover:text-black hover:bg-gray-100
                        transition-colors"
           >
             ←
           </button>
           <div>
-            <h1 className="text-xl font-bold text-gray-900">
+            <h1 className="text-xl font-bold text-black">
               {isEdit ? `Edit Bill` : `New Bill`}
             </h1>
             <p className="text-gray-600 text-sm mt-0.5">
@@ -559,7 +559,7 @@ export default function BillForm() {
                         <label className="label mb-1 invisible">Amt</label>
                       )}
                       <div className="flex items-center justify-between">
-                        <span className="text-xs text-amber-400 font-medium">
+                        <span className="text-xs text-blue-400 font-medium">
                           {li.qty && li.rate
                             ? `₹${(Number(li.qty) * Number(li.rate)).toLocaleString('en-IN')}`
                             : '—'
@@ -591,7 +591,7 @@ export default function BillForm() {
                 <button
                   type="button"
                   onClick={runPreview}
-                  className="text-xs text-amber-400 hover:text-amber-300
+                  className="text-xs text-blue-400 hover:text-blue-300
                              flex items-center gap-1.5 transition-colors"
                 >
                   <RefreshCw size={12} /> Update Calculation

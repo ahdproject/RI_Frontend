@@ -37,7 +37,7 @@ export default function EmployeesList() {
 
   if (loading) return (
     <div className="flex items-center justify-center h-64">
-      <Loader2 size={28} className="animate-spin text-amber-500" />
+      <Loader2 size={28} className="animate-spin text-blue-500" />
     </div>
   )
 
@@ -46,7 +46,7 @@ export default function EmployeesList() {
 
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">Employees</h1>
+          <h1 className="text-xl font-bold text-black">Employees</h1>
           <p className="text-gray-600 text-sm mt-1">
             {employees.length} employee{employees.length !== 1 ? 's' : ''} registered
           </p>
@@ -134,7 +134,7 @@ export default function EmployeesList() {
                             {emp.name.charAt(0)}
                           </span>
                         </div>
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-black">
                           {emp.name}
                         </p>
                       </div>

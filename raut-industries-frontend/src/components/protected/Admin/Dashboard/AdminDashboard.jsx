@@ -53,14 +53,14 @@ const KpiCard = ({ label, value, sub, color, icon: Icon, onClick }) => (
 
 const SectionHeader = ({ title, action, onAction }) => (
   <div className="flex items-center justify-between mb-4">
-    <h2 className="text-sm font-semibold text-gray-900 uppercase
+    <h2 className="text-sm font-semibold text-black uppercase
                    tracking-wider">
       {title}
     </h2>
     {action && (
       <button
         onClick={onAction}
-        className="text-xs text-amber-400 hover:text-amber-300
+        className="text-xs text-blue-400 hover:text-blue-300
                    flex items-center gap-1 transition-colors"
       >
         {action} <ArrowRight size={12} />
@@ -104,7 +104,7 @@ export default function AdminDashboard() {
   if (loading) {
     return (
       <div className="flex items-center justify-center h-64">
-        <Loader2 size={28} className="animate-spin text-amber-500" />
+        <Loader2 size={28} className="animate-spin text-blue-500" />
       </div>
     )
   }
@@ -136,9 +136,9 @@ export default function AdminDashboard() {
       {/* Page header */}
       <div className="page-header">
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-black">
             Good {now.getHours() < 12 ? 'Morning' : now.getHours() < 17
-              ? 'Afternoon' : 'Evening'}, <span className="text-amber-500">{user?.name?.split(' ')[0]}</span> 
+              ? 'Afternoon' : 'Evening'}, <span className="text-blue-500">{user?.name?.split(' ')[0]}</span> 
           </h1>
           <p className="text-gray-600 text-sm mt-1">
             {monthName(month)} {year} · Raut Industries Overview
@@ -162,9 +162,9 @@ export default function AdminDashboard() {
           sub="excl. GST"
           icon={TrendingUp}
           color={{
-            bg:   'bg-amber-500/10',
-            icon: 'text-amber-400',
-            text: 'text-amber-400',
+            bg:   'bg-blue-500/10',
+            icon: 'text-blue-400',
+            text: 'text-blue-400',
           }}
           onClick={() => navigate('/reports/sales')}
         />
@@ -219,8 +219,8 @@ export default function AdminDashboard() {
           {
             label: 'Drafts',
             value: sales.draft_bills || 0,
-            cls:   'text-amber-400',
-            bg:    'bg-amber-500/10 border-amber-500/20',
+            cls:   'text-blue-400',
+            bg:    'bg-blue-500/10 border-blue-500/20',
           },
           {
             label: 'Cancelled',
@@ -270,7 +270,7 @@ export default function AdminDashboard() {
                       {i + 1}
                     </span>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-black">
                         {p.product_name}
                       </p>
                       <p className="text-xs text-gray-600 mt-0.5">
@@ -278,7 +278,7 @@ export default function AdminDashboard() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-semibold text-amber-400">
+                  <p className="text-sm font-semibold text-blue-400">
                     {formatCurrency(p.total_amount)}
                   </p>
                 </div>
@@ -312,7 +312,7 @@ export default function AdminDashboard() {
                       {i + 1}
                     </span>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-black">
                         {c.client_name}
                       </p>
                       <p className="text-xs text-gray-600 mt-0.5">
@@ -338,7 +338,7 @@ export default function AdminDashboard() {
             label: 'New Bill',
             desc:  'Create invoice',
             path:  '/bills/new',
-            color: 'text-amber-400 bg-amber-500/10 border-amber-500/20',
+            color: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
             icon:  FileText,
           },
           {

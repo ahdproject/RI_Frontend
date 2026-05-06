@@ -53,7 +53,7 @@ export default function GstReport() {
         <ReportKpi
           label="Taxable Value"
           value={formatCurrency(totals.taxable_value)}
-          color="text-gray-900"
+          color="text-black"
         />
         <ReportKpi
           label="Total CGST"
@@ -69,7 +69,7 @@ export default function GstReport() {
           label="Total Tax"
           value={formatCurrency(totals.total_tax)}
           sub={`${data?.confirmed_bills || 0} confirmed bills`}
-          color="text-amber-400"
+          color="text-blue-400"
         />
       </div>
 
@@ -106,10 +106,10 @@ export default function GstReport() {
                 : breakdown.map((row, i) => (
                   <tr key={i} className="table-row-hover">
                     <td className="px-4 py-2.5 font-mono text-xs
-                                   text-gray-900 font-semibold">
+                                   text-black font-semibold">
                       {row.hsn_code}
                     </td>
-                    <td className="px-4 py-2.5 text-gray-900 font-medium">
+                    <td className="px-4 py-2.5 text-black font-medium">
                       {formatCurrency(row.taxable_value)}
                     </td>
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
@@ -133,7 +133,7 @@ export default function GstReport() {
                         : '—'
                       }
                     </td>
-                    <td className="px-4 py-2.5 font-bold text-amber-400">
+                    <td className="px-4 py-2.5 font-bold text-blue-400">
                       {formatCurrency(row.total_tax)}
                     </td>
                   </tr>
@@ -143,11 +143,11 @@ export default function GstReport() {
             {breakdown.length > 0 && (
               <tfoot className="border-t-2 border-gray-200 bg-gray-100/40">
                 <tr>
-                  <td className="px-4 py-3 text-xs font-bold text-gray-900
+                  <td className="px-4 py-3 text-xs font-bold text-black
                                  uppercase tracking-wide">
                     Total
                   </td>
-                  <td className="px-4 py-3 font-bold text-gray-900">
+                  <td className="px-4 py-3 font-bold text-black">
                     {formatCurrency(totals.taxable_value)}
                   </td>
                   <td />
@@ -165,7 +165,7 @@ export default function GstReport() {
                       : '—'
                     }
                   </td>
-                  <td className="px-4 py-3 font-bold text-amber-400 text-base">
+                  <td className="px-4 py-3 font-bold text-blue-400 text-base">
                     {formatCurrency(totals.total_tax)}
                   </td>
                 </tr>

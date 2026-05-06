@@ -144,8 +144,8 @@ export default function UserForm() {
               className={`text-xs font-semibold px-4 py-2 rounded-lg
                           transition-colors
                           ${showPwdTab === key
-                            ? 'bg-amber-500 text-gray-900'
-                            : 'text-gray-600 hover:text-gray-900'
+                            ? 'bg-blue-500 text-black'
+                            : 'text-gray-600 hover:text-black'
                           }`}
             >
               {label}
@@ -261,13 +261,13 @@ export default function UserForm() {
         <form onSubmit={handleChangePassword} className="card p-6 space-y-5">
           <div className="flex items-center gap-3 pb-2 border-b
                           border-gray-200">
-            <div className="w-8 h-8 rounded-lg bg-amber-500/10 border
-                            border-amber-500/20 flex items-center
+            <div className="w-8 h-8 rounded-lg bg-blue-500/10 border
+                            border-blue-500/20 flex items-center
                             justify-center">
-              <KeyRound size={14} className="text-amber-400" />
+              <KeyRound size={14} className="text-blue-400" />
             </div>
             <div>
-              <p className="text-sm font-semibold text-gray-900">
+              <p className="text-sm font-semibold text-black">
                 Change Password
               </p>
               <p className="text-xs text-gray-600 mt-0.5">

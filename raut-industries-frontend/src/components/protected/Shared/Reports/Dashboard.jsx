@@ -74,7 +74,7 @@ export default function Dashboard() {
           label="Total Sales"
           value={formatCurrency(sales.total_subtotal)}
           sub="excl. GST"
-          color="text-amber-400"
+          color="text-blue-400"
         />
         <ReportKpi
           label="Total with GST"
@@ -104,7 +104,7 @@ export default function Dashboard() {
           { label: 'Confirmed', value: sales.confirmed_bills || 0,
             cls: 'text-emerald-400', bg: 'border-emerald-500/20' },
           { label: 'Drafts',    value: sales.draft_bills     || 0,
-            cls: 'text-amber-400',   bg: 'border-amber-500/20'   },
+            cls: 'text-blue-400',   bg: 'border-blue-500/20'   },
           { label: 'Cancelled', value: sales.cancelled_bills || 0,
             cls: 'text-red-400',     bg: 'border-red-500/20'     },
         ].map((s) => (
@@ -135,7 +135,7 @@ export default function Dashboard() {
                   <div className="flex items-center gap-3">
                     <span className="text-xs text-gray-700 w-4">{i + 1}</span>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-black">
                         {p.product_name}
                       </p>
                       <p className="text-xs text-gray-600 mt-0.5">
@@ -143,7 +143,7 @@ export default function Dashboard() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm font-semibold text-amber-400">
+                  <p className="text-sm font-semibold text-blue-400">
                     {formatCurrency(p.total_amount)}
                   </p>
                 </div>
@@ -164,7 +164,7 @@ export default function Dashboard() {
                   <div className="flex items-center gap-3">
                     <span className="text-xs text-gray-700 w-4">{i + 1}</span>
                     <div>
-                      <p className="text-sm font-medium text-gray-900">
+                      <p className="text-sm font-medium text-black">
                         {c.client_name}
                       </p>
                       <p className="text-xs text-gray-600 mt-0.5">
@@ -185,7 +185,7 @@ export default function Dashboard() {
       {/* Quick links */}
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {[
-          { label: 'New Bill',     path: '/bills/new',          color: 'text-amber-400  bg-amber-500/10  border-amber-500/20',  icon: FileText       },
+          { label: 'New Bill',     path: '/bills/new',          color: 'text-blue-400  bg-blue-500/10  border-blue-500/20',  icon: FileText       },
           { label: 'Attendance',   path: '/attendance',          color: 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20', icon: ClipboardCheck },
           { label: 'Sales Report', path: '/reports/sales',       color: 'text-blue-400   bg-blue-500/10   border-blue-500/20',   icon: BarChart3      },
           ...(isAdmin ? [

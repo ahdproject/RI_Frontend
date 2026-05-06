@@ -6,7 +6,7 @@ export const ListPageWrapper = ({ title, subtitle, action, children }) => (
   <div className="space-y-5">
     <div className="page-header">
       <div>
-        <h1 className="text-xl font-bold text-gray-900">{title}</h1>
+        <h1 className="text-xl font-bold text-black">{title}</h1>
         {subtitle && (
           <p className="text-gray-600 text-sm mt-1">{subtitle}</p>
         )}
@@ -26,13 +26,13 @@ export const FormPageWrapper = ({ title, subtitle, backPath, children }) => {
         <button
           onClick={() => navigate(backPath)}
           className="w-8 h-8 flex items-center justify-center rounded-lg
-                     text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                     text-gray-600 hover:text-black hover:bg-gray-100
                      transition-colors"
         >
           <ArrowLeft size={16} />
         </button>
         <div>
-          <h1 className="text-xl font-bold text-gray-900">{title}</h1>
+          <h1 className="text-xl font-bold text-black">{title}</h1>
           {subtitle && (
             <p className="text-gray-600 text-sm mt-0.5">{subtitle}</p>
           )}
@@ -46,7 +46,7 @@ export const FormPageWrapper = ({ title, subtitle, backPath, children }) => {
 // ─── Loading state ────────────────────────────────────────────
 export const LoadingState = () => (
   <div className="flex items-center justify-center h-48">
-    <Loader2 size={28} className="animate-spin text-amber-500" />
+    <Loader2 size={28} className="animate-spin text-blue-500" />
   </div>
 )
 
@@ -98,7 +98,7 @@ export const ConfirmModal = ({ message, onConfirm, onCancel, loading }) => (
                   p-4 bg-white/80 backdrop-blur-sm">
     <div className="card w-full max-w-sm p-6 space-y-4
                     shadow-2xl shadow-black/40">
-      <p className="text-sm text-gray-900 leading-relaxed">{message}</p>
+      <p className="text-sm text-black leading-relaxed">{message}</p>
       <div className="flex gap-3 justify-end">
         <button
           onClick={onCancel}

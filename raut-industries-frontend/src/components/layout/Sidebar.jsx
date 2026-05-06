@@ -125,8 +125,8 @@ const NavItem = ({ item, depth = 0, onNavigate, sidebarOpen }) => {
           className={`w-full flex items-center justify-between gap-3
                       px-3 py-2.5 rounded-lg text-sm transition-colors
                       ${depth === 0
-                        ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60'
-                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/40'
+                        ? 'text-gray-600 hover:text-black hover:bg-gray-100/60'
+                        : 'text-gray-600 hover:text-black hover:bg-gray-100/40'
                       }`}
           title={!sidebarOpen ? item.label : ''}
         >
@@ -134,10 +134,10 @@ const NavItem = ({ item, depth = 0, onNavigate, sidebarOpen }) => {
             {item.icon && (
               <item.icon
                 size={16}
-                className={`shrink-0 ${open ? 'text-amber-500' : 'text-gray-500'}`}
+                className={`shrink-0 ${open ? 'text-blue-500' : 'text-gray-500'}`}
               />
             )}
-            <span className={`font-medium whitespace-nowrap overflow-hidden transition-all duration-200 ${!sidebarOpen ? 'w-0 opacity-0' : 'w-auto opacity-100'} ${open ? 'text-gray-900' : ''}`}>
+            <span className={`font-medium whitespace-nowrap overflow-hidden transition-all duration-200 ${!sidebarOpen ? 'w-0 opacity-0' : 'w-auto opacity-100'} ${open ? 'text-black' : ''}`}>
               {item.label}
             </span>
           </span>
@@ -175,10 +175,10 @@ const NavItem = ({ item, depth = 0, onNavigate, sidebarOpen }) => {
         `flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm
          transition-colors font-medium
          ${isActive
-           ? 'bg-amber-100 text-amber-700 border border-amber-200 shadow-sm'
+           ? 'bg-blue-100 text-blue-700 border border-blue-200 shadow-sm'
            : depth === 0
-             ? 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/60'
-             : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100/40'
+             ? 'text-gray-600 hover:text-black hover:bg-gray-100/60'
+             : 'text-gray-600 hover:text-black hover:bg-gray-100/40'
          }`
       }
     >
@@ -238,13 +238,13 @@ export default function Sidebar() {
         {/* Logo */}
         <div className="flex items-center gap-3 px-4 h-14 border-b
                         border-gray-200 shrink-0 bg-white">
-          <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center
+          <div className="w-8 h-8 rounded-lg bg-blue-500 flex items-center
                           justify-center shrink-0 shadow-sm">
             <span className="text-white font-black text-xs">RI</span>
           </div>
           {sidebarOpen && (
             <div className="overflow-hidden">
-              <p className="font-bold text-xs text-gray-900 leading-none
+              <p className="font-bold text-xs text-black leading-none
                             whitespace-nowrap tracking-wide">
                 RAUT INDUSTRIES
               </p>
@@ -272,7 +272,7 @@ export default function Sidebar() {
         <div className="border-t border-gray-200 p-3 shrink-0 bg-white">
           {sidebarOpen && user && (
             <div className="px-2 py-2 mb-2 bg-gray-50 rounded-lg border border-gray-100">
-              <p className="text-xs font-semibold text-gray-900 truncate">
+              <p className="text-xs font-semibold text-black truncate">
                 {user.name}
               </p>
               <p className="text-[11px] text-gray-500 mt-0.5 uppercase tracking-wider">

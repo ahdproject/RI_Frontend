@@ -47,7 +47,7 @@ const roleBadgeClass = (role) => {
   const map = {
     SuperAdmin: 'bg-purple-100/50 text-purple-700 border-purple-200',
     Admin:      'bg-blue-100/50   text-blue-700   border-blue-200',
-    Manager:    'bg-amber-100/50  text-amber-700  border-amber-200',
+    Manager:    'bg-blue-100/50  text-blue-700  border-blue-200',
   }
   return map[role] || 'bg-gray-100/50 text-gray-600 border-gray-200'
 }
@@ -72,7 +72,7 @@ export default function NavBar() {
         <button
           onClick={() => dispatch(toggleSidebar())}
           className="w-8 h-8 flex items-center justify-center rounded-lg
-                     text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                     text-gray-600 hover:text-black hover:bg-gray-100
                      transition-colors"
           aria-label="Toggle sidebar"
         >
@@ -80,7 +80,7 @@ export default function NavBar() {
         </button>
 
         <div className="flex items-center gap-2">
-          <h1 className="text-sm font-semibold text-gray-900">
+          <h1 className="text-sm font-semibold text-black">
             {pageTitle}
           </h1>
         </div>
@@ -92,7 +92,7 @@ export default function NavBar() {
         {/* Notification bell (placeholder) */}
         <button
           className="w-8 h-8 flex items-center justify-center rounded-lg
-                     text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                     text-gray-600 hover:text-black hover:bg-gray-100
                      transition-colors relative"
         >
           <Bell size={16} />
@@ -103,17 +103,17 @@ export default function NavBar() {
           <div className="flex items-center gap-2.5 pl-3 border-l border-gray-200">
 
             {/* Avatar */}
-            <div className="w-7 h-7 rounded-lg bg-amber-100 border
-                            border-amber-200 flex items-center
+            <div className="w-7 h-7 rounded-lg bg-blue-100 border
+                            border-blue-200 flex items-center
                             justify-center shrink-0">
-              <span className="text-amber-700 font-bold text-xs">
+              <span className="text-blue-700 font-bold text-xs">
                 {user.name?.charAt(0)?.toUpperCase() || 'U'}
               </span>
             </div>
 
             {/* Name + Role */}
             <div className="hidden sm:block">
-              <p className="text-xs font-semibold text-gray-900 leading-none">
+              <p className="text-xs font-semibold text-black leading-none">
                 {user.name}
               </p>
               <span className={`inline-block mt-1 text-[10px] font-semibold

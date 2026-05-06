@@ -87,7 +87,7 @@ export default function ClientForm() {
 
   if (fetching) return (
     <div className="flex items-center justify-center h-64">
-      <Loader2 size={28} className="animate-spin text-amber-500" />
+      <Loader2 size={28} className="animate-spin text-blue-500" />
     </div>
   )
 
@@ -98,13 +98,13 @@ export default function ClientForm() {
         <button
           onClick={() => navigate('/admin/masters/clients')}
           className="w-8 h-8 flex items-center justify-center rounded-lg
-                     text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                     text-gray-600 hover:text-black hover:bg-gray-100
                      transition-colors"
         >
           <ArrowLeft size={18} />
         </button>
         <div>
-          <h1 className="text-xl font-bold text-gray-900">
+          <h1 className="text-xl font-bold text-black">
             {isEdit ? 'Edit Client' : 'Add Client'}
           </h1>
           <p className="text-gray-600 text-sm mt-0.5">
@@ -194,7 +194,7 @@ export default function ClientForm() {
         {isEdit && (
           <div className="flex items-center justify-between py-1">
             <div>
-              <p className="text-sm font-medium text-gray-900">Active</p>
+              <p className="text-sm font-medium text-black">Active</p>
               <p className="text-xs text-gray-600 mt-0.5">
                 Inactive clients won't appear in bill dropdown
               </p>
@@ -208,7 +208,7 @@ export default function ClientForm() {
                 className="sr-only peer"
               />
               <div className="w-10 h-5 bg-gray-700 peer-focus:outline-none
-                              rounded-full peer peer-checked:bg-amber-500
+                              rounded-full peer peer-checked:bg-blue-500
                               transition-colors after:content-[''] after:absolute
                               after:top-0.5 after:left-0.5 after:bg-white
                               after:rounded-full after:h-4 after:w-4

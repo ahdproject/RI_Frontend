@@ -15,7 +15,7 @@ const DEPARTMENTS = [
 
 const pctColor = (pct) => {
   if (pct >= 80) return 'text-emerald-400'
-  if (pct >= 60) return 'text-amber-400'
+  if (pct >= 60) return 'text-blue-400'
   return 'text-red-400'
 }
 
@@ -85,7 +85,7 @@ export default function AttendanceReport() {
         <ReportKpi
           label="Employees"
           value={totals.employee_count || 0}
-          color="text-gray-900"
+          color="text-black"
         />
         <ReportKpi
           label="Total Present Days"
@@ -100,7 +100,7 @@ export default function AttendanceReport() {
         <ReportKpi
           label="Total Payable"
           value={formatCurrency(totals.total_payable_salary)}
-          color="text-amber-400"
+          color="text-blue-400"
         />
       </div>
 
@@ -131,7 +131,7 @@ export default function AttendanceReport() {
                         {d.department}
                       </span>
                     </td>
-                    <td className="px-4 py-2.5 text-gray-900">
+                    <td className="px-4 py-2.5 text-black">
                       {d.employee_count}
                     </td>
                     <td className="px-4 py-2.5 text-emerald-400 font-semibold">
@@ -140,13 +140,13 @@ export default function AttendanceReport() {
                     <td className="px-4 py-2.5 text-red-400 font-semibold">
                       {d.total_absent}
                     </td>
-                    <td className="px-4 py-2.5 text-amber-400">
+                    <td className="px-4 py-2.5 text-blue-400">
                       {d.total_half_day}
                     </td>
                     <td className="px-4 py-2.5 text-blue-400">
                       {d.total_leave}
                     </td>
-                    <td className="px-4 py-2.5 font-bold text-amber-400">
+                    <td className="px-4 py-2.5 font-bold text-blue-400">
                       {formatCurrency(d.total_payable)}
                     </td>
                   </tr>
@@ -201,7 +201,7 @@ export default function AttendanceReport() {
                         {emp.emp_code}
                       </td>
                       <td className="px-4 py-2.5">
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-black">
                           {emp.employee_name}
                         </p>
                         <p className="text-[10px] text-gray-600">
@@ -220,13 +220,13 @@ export default function AttendanceReport() {
                       <td className="px-4 py-2.5 text-red-400 font-bold">
                         {emp.absent_count}
                       </td>
-                      <td className="px-4 py-2.5 text-amber-400">
+                      <td className="px-4 py-2.5 text-blue-400">
                         {emp.half_day_count}
                       </td>
                       <td className="px-4 py-2.5 text-blue-400">
                         {emp.leave_count}
                       </td>
-                      <td className="px-4 py-2.5 text-gray-900">
+                      <td className="px-4 py-2.5 text-black">
                         {emp.effective_days}
                       </td>
                       <td className="px-4 py-2.5">
@@ -238,7 +238,7 @@ export default function AttendanceReport() {
                       <td className="px-4 py-2.5 text-gray-600">
                         {formatCurrency(emp.monthly_salary)}
                       </td>
-                      <td className="px-4 py-2.5 font-bold text-amber-400">
+                      <td className="px-4 py-2.5 font-bold text-blue-400">
                         {formatCurrency(emp.payable_salary)}
                       </td>
                     </tr>
@@ -252,7 +252,7 @@ export default function AttendanceReport() {
               <tfoot className="border-t-2 border-gray-200 bg-gray-100/40">
                 <tr>
                   <td colSpan={3}
-                    className="px-4 py-3 text-xs font-bold text-gray-900
+                    className="px-4 py-3 text-xs font-bold text-black
                                uppercase tracking-wide">
                     Totals
                   </td>
@@ -262,7 +262,7 @@ export default function AttendanceReport() {
                   <td className="px-4 py-3 font-bold text-red-400">
                     {filtered.reduce((s, e) => s + e.absent_count, 0)}
                   </td>
-                  <td className="px-4 py-3 font-bold text-amber-400">
+                  <td className="px-4 py-3 font-bold text-blue-400">
                     {filtered.reduce((s, e) => s + e.half_day_count, 0)}
                   </td>
                   <td className="px-4 py-3 font-bold text-blue-400">
@@ -270,12 +270,12 @@ export default function AttendanceReport() {
                   </td>
                   <td />
                   <td />
-                  <td className="px-4 py-3 font-bold text-gray-900">
+                  <td className="px-4 py-3 font-bold text-black">
                     {formatCurrency(
                       filtered.reduce((s, e) => s + (e.monthly_salary || 0), 0)
                     )}
                   </td>
-                  <td className="px-4 py-3 font-bold text-amber-400 text-base">
+                  <td className="px-4 py-3 font-bold text-blue-400 text-base">
                     {formatCurrency(
                       filtered.reduce((s, e) => s + (e.payable_salary || 0), 0)
                     )}

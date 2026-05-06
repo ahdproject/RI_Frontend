@@ -69,7 +69,7 @@ export default function SalesReport() {
           label="Subtotal"
           value={formatCurrency(overview.total_subtotal)}
           sub="excl. GST"
-          color="text-gray-900"
+          color="text-black"
         />
         <ReportKpi
           label="GST"
@@ -80,7 +80,7 @@ export default function SalesReport() {
           label="Total with GST"
           value={formatCurrency(overview.total_with_gst)}
           sub={`${overview.confirmed_bills || 0} bills`}
-          color="text-amber-400"
+          color="text-blue-400"
         />
         <ReportKpi
           label="Total Pieces"
@@ -98,8 +98,8 @@ export default function SalesReport() {
             className={`text-xs font-semibold px-4 py-2 rounded-lg
                         transition-colors whitespace-nowrap
                         ${tab === key
-                          ? 'bg-amber-500 text-gray-900'
-                          : 'text-gray-600 hover:text-gray-900'
+                          ? 'bg-blue-500 text-black'
+                          : 'text-gray-600 hover:text-black'
                         }`}
           >
             {label}
@@ -114,9 +114,9 @@ export default function SalesReport() {
             <div className="px-5 py-4 space-y-3">
               {[
                 { label: 'Confirmed Bills', value: overview.confirmed_bills || 0, color: 'text-emerald-400' },
-                { label: 'Draft Bills',     value: overview.draft_bills     || 0, color: 'text-amber-400'   },
+                { label: 'Draft Bills',     value: overview.draft_bills     || 0, color: 'text-blue-400'   },
                 { label: 'Cancelled Bills', value: overview.cancelled_bills || 0, color: 'text-red-400'     },
-                { label: 'Total Bills',     value: overview.total_bills     || 0, color: 'text-gray-900'    },
+                { label: 'Total Bills',     value: overview.total_bills     || 0, color: 'text-black'    },
               ].map((r) => (
                 <div key={r.label}
                   className="flex justify-between items-center
@@ -138,7 +138,7 @@ export default function SalesReport() {
                   <div className="flex items-center gap-3">
                     <span className="text-xs text-gray-700 w-4">{i + 1}</span>
                     <div>
-                      <p className="text-xs font-semibold text-gray-900">
+                      <p className="text-xs font-semibold text-black">
                         #{b.bill_no} — {b.client_name}
                       </p>
                       <p className="text-[10px] text-gray-600">
@@ -147,7 +147,7 @@ export default function SalesReport() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-xs font-bold text-amber-400">
+                  <p className="text-xs font-bold text-blue-400">
                     {formatCurrency(b.total_with_gst)}
                   </p>
                 </div>
@@ -181,7 +181,7 @@ export default function SalesReport() {
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {i + 1}
                     </td>
-                    <td className="px-4 py-2.5 font-semibold text-gray-900">
+                    <td className="px-4 py-2.5 font-semibold text-black">
                       {p.product_name}
                     </td>
                     <td className="px-4 py-2.5 font-mono text-xs text-gray-600">
@@ -190,10 +190,10 @@ export default function SalesReport() {
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {p.bill_count}
                     </td>
-                    <td className="px-4 py-2.5 text-gray-900">
+                    <td className="px-4 py-2.5 text-black">
                       {formatNumber(p.total_qty, 0)} {p.unit}
                     </td>
-                    <td className="px-4 py-2.5 font-medium text-gray-900">
+                    <td className="px-4 py-2.5 font-medium text-black">
                       {formatCurrency(p.total_amount)}
                     </td>
                     <td className="px-4 py-2.5 text-blue-400 text-xs">
@@ -203,7 +203,7 @@ export default function SalesReport() {
                         parseFloat(p.total_igst || 0)
                       )}
                     </td>
-                    <td className="px-4 py-2.5 font-bold text-amber-400">
+                    <td className="px-4 py-2.5 font-bold text-blue-400">
                       {formatCurrency(p.total_line_total)}
                     </td>
                   </tr>
@@ -238,7 +238,7 @@ export default function SalesReport() {
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {i + 1}
                     </td>
-                    <td className="px-4 py-2.5 font-semibold text-gray-900">
+                    <td className="px-4 py-2.5 font-semibold text-black">
                       {c.client_name}
                     </td>
                     <td className="px-4 py-2.5 font-mono text-xs text-gray-600">
@@ -247,13 +247,13 @@ export default function SalesReport() {
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {c.bill_count}
                     </td>
-                    <td className="px-4 py-2.5 text-gray-900">
+                    <td className="px-4 py-2.5 text-black">
                       {formatCurrency(c.total_subtotal)}
                     </td>
                     <td className="px-4 py-2.5 text-blue-400 text-xs">
                       {formatCurrency(c.total_gst)}
                     </td>
-                    <td className="px-4 py-2.5 font-bold text-amber-400">
+                    <td className="px-4 py-2.5 font-bold text-blue-400">
                       {formatCurrency(c.total_with_gst)}
                     </td>
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
@@ -291,14 +291,14 @@ export default function SalesReport() {
                 {billList.map((b) => (
                   <tr key={b.bill_no} className="table-row-hover">
                     <td className="px-4 py-2.5 font-mono text-xs
-                                   text-gray-900 font-semibold">
+                                   text-black font-semibold">
                       #{b.bill_no}
                     </td>
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {formatDate(b.bill_date)}
                     </td>
                     <td className="px-4 py-2.5">
-                      <p className="font-medium text-gray-900 text-xs">
+                      <p className="font-medium text-black text-xs">
                         {b.client_name}
                       </p>
                       {b.client_gstin && (
@@ -310,13 +310,13 @@ export default function SalesReport() {
                     <td className="px-4 py-2.5 text-gray-600 text-xs">
                       {formatNumber(b.total_pieces, 0)}
                     </td>
-                    <td className="px-4 py-2.5 text-gray-900 text-xs">
+                    <td className="px-4 py-2.5 text-black text-xs">
                       {formatCurrency(b.subtotal)}
                     </td>
                     <td className="px-4 py-2.5 text-blue-400 text-xs">
                       {formatCurrency(b.gst_total)}
                     </td>
-                    <td className="px-4 py-2.5 font-semibold text-amber-400">
+                    <td className="px-4 py-2.5 font-semibold text-blue-400">
                       {formatCurrency(b.total_with_gst)}
                     </td>
                     <td className="px-4 py-2.5">
@@ -332,20 +332,20 @@ export default function SalesReport() {
               <tfoot className="border-t-2 border-gray-200 bg-gray-100/40">
                 <tr>
                   <td colSpan={3}
-                    className="px-4 py-3 text-xs font-bold text-gray-900
+                    className="px-4 py-3 text-xs font-bold text-black
                                uppercase tracking-wide">
                     Totals
                   </td>
-                  <td className="px-4 py-3 font-bold text-gray-900">
+                  <td className="px-4 py-3 font-bold text-black">
                     {formatNumber(overview.total_pieces, 0)}
                   </td>
-                  <td className="px-4 py-3 font-bold text-gray-900">
+                  <td className="px-4 py-3 font-bold text-black">
                     {formatCurrency(overview.total_subtotal)}
                   </td>
                   <td className="px-4 py-3 font-bold text-blue-400">
                     {formatCurrency(overview.total_gst)}
                   </td>
-                  <td className="px-4 py-3 font-bold text-amber-400 text-base">
+                  <td className="px-4 py-3 font-bold text-blue-400 text-base">
                     {formatCurrency(overview.total_with_gst)}
                   </td>
                   <td />

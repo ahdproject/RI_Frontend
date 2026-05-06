@@ -40,7 +40,7 @@ const ProgressBar = ({ pct, color = 'bg-emerald-500' }) => (
 // ─── Attendance percentage colour ─────────────────────────────
 const pctColor = (pct) => {
   if (pct >= 80) return { text: 'text-emerald-400', bar: 'bg-emerald-500' }
-  if (pct >= 60) return { text: 'text-amber-400',   bar: 'bg-amber-500'   }
+  if (pct >= 60) return { text: 'text-blue-400',   bar: 'bg-blue-500'   }
   return          { text: 'text-red-400',            bar: 'bg-red-500'     }
 }
 
@@ -118,13 +118,13 @@ export default function AttendanceSummary() {
           <button
             onClick={() => navigate('/attendance')}
             className="w-8 h-8 flex items-center justify-center rounded-lg
-                       text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                       text-gray-600 hover:text-black hover:bg-gray-100
                        transition-colors"
           >
             <ArrowLeft size={16} />
           </button>
           <div>
-            <h1 className="text-xl font-bold text-gray-900">
+            <h1 className="text-xl font-bold text-black">
               Attendance Summary
             </h1>
             <p className="text-gray-600 text-sm mt-1">
@@ -139,17 +139,17 @@ export default function AttendanceSummary() {
           <div className="flex items-center gap-1 card px-3 py-2">
             <button
               onClick={prevMonth}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-black transition-colors"
             >
               <ChevronLeft size={16} />
             </button>
-            <span className="text-sm font-semibold text-gray-900 w-28
+            <span className="text-sm font-semibold text-black w-28
                              text-center">
               {monthName(month)} {year}
             </span>
             <button
               onClick={nextMonth}
-              className="text-gray-600 hover:text-gray-900 transition-colors"
+              className="text-gray-600 hover:text-black transition-colors"
             >
               <ChevronRight size={16} />
             </button>
@@ -176,7 +176,7 @@ export default function AttendanceSummary() {
               className={`text-xs font-semibold px-3 py-2 rounded-lg border
                           capitalize transition-colors
                           ${viewMode === mode
-                            ? 'bg-amber-500 text-gray-900 border-amber-500'
+                            ? 'bg-blue-500 text-black border-blue-500'
                             : 'bg-gray-100 text-gray-600 border-gray-200 hover:border-gray-500'
                           }`}
             >
@@ -201,7 +201,7 @@ export default function AttendanceSummary() {
             {
               label: 'Employees',
               value: summary.length,
-              color: 'text-gray-900',
+              color: 'text-black',
             },
             {
               label: 'Total Present',
@@ -216,7 +216,7 @@ export default function AttendanceSummary() {
             {
               label: 'Half Days',
               value: totals.half_day,
-              color: 'text-amber-400',
+              color: 'text-blue-400',
             },
             {
               label: 'On Leave',
@@ -226,7 +226,7 @@ export default function AttendanceSummary() {
             {
               label: 'Total Payable',
               value: formatCurrency(totals.payable),
-              color: 'text-amber-400 text-base',
+              color: 'text-blue-400 text-base',
             },
           ].map((s) => (
             <div key={s.label} className="card px-4 py-3 text-center">
@@ -255,7 +255,7 @@ export default function AttendanceSummary() {
                           {emps.length} employee{emps.length !== 1 ? 's' : ''}
                         </span>
                         <div className="flex-1 h-px bg-gray-100" />
-                        <span className="text-xs text-amber-400 font-medium">
+                        <span className="text-xs text-blue-400 font-medium">
                           {formatCurrency(
                             emps.reduce((s, e) => s + (e.payable_salary || 0), 0)
                           )}
@@ -282,7 +282,7 @@ export default function AttendanceSummary() {
                               <div className="flex items-start justify-between">
                                 <div>
                                   <p className="text-sm font-semibold
-                                               text-gray-900 leading-tight">
+                                               text-black leading-tight">
                                     {emp.employee_name}
                                   </p>
                                   <p className="text-[11px] text-gray-600 mt-0.5">
@@ -316,7 +316,7 @@ export default function AttendanceSummary() {
                                 <StatPill
                                   value={emp.half_day_count}
                                   label="H"
-                                  color="text-amber-400"
+                                  color="text-blue-400"
                                 />
                                 <StatPill
                                   value={emp.leave_count}
@@ -349,7 +349,7 @@ export default function AttendanceSummary() {
                                   <span className="text-gray-600 font-medium">
                                     Payable
                                   </span>
-                                  <span className="text-amber-400 font-bold">
+                                  <span className="text-blue-400 font-bold">
                                     {formatCurrency(emp.payable_salary)}
                                   </span>
                                 </div>
@@ -404,7 +404,7 @@ export default function AttendanceSummary() {
                                 {emp.emp_code}
                               </td>
                               <td className="px-4 py-2.5">
-                                <p className="font-semibold text-gray-900">
+                                <p className="font-semibold text-black">
                                   {emp.employee_name}
                                 </p>
                                 <p className="text-[10px] text-gray-600 mt-0.5">
@@ -424,7 +424,7 @@ export default function AttendanceSummary() {
                                              font-bold">
                                 {emp.absent_count}
                               </td>
-                              <td className="px-4 py-2.5 text-amber-400
+                              <td className="px-4 py-2.5 text-blue-400
                                              font-medium">
                                 {emp.half_day_count}
                               </td>
@@ -432,7 +432,7 @@ export default function AttendanceSummary() {
                                              font-medium">
                                 {emp.leave_count}
                               </td>
-                              <td className="px-4 py-2.5 text-gray-900">
+                              <td className="px-4 py-2.5 text-black">
                                 {emp.effective_days}
                               </td>
                               <td className="px-4 py-2.5">
@@ -453,7 +453,7 @@ export default function AttendanceSummary() {
                                 {formatCurrency(emp.monthly_salary)}
                               </td>
                               <td className="px-4 py-2.5 font-bold
-                                             text-amber-400">
+                                             text-blue-400">
                                 {formatCurrency(emp.payable_salary)}
                               </td>
                             </tr>
@@ -467,7 +467,7 @@ export default function AttendanceSummary() {
                         <tr>
                           <td colSpan={3}
                             className="px-4 py-3 text-xs font-bold
-                                       text-gray-900 uppercase tracking-wide">
+                                       text-black uppercase tracking-wide">
                             Totals
                           </td>
                           <td className="px-4 py-3 text-emerald-400
@@ -477,7 +477,7 @@ export default function AttendanceSummary() {
                           <td className="px-4 py-3 text-red-400 font-bold">
                             {totals.absent}
                           </td>
-                          <td className="px-4 py-3 text-amber-400
+                          <td className="px-4 py-3 text-blue-400
                                          font-medium">
                             {totals.half_day}
                           </td>
@@ -485,12 +485,12 @@ export default function AttendanceSummary() {
                                          font-medium">
                             {totals.leave}
                           </td>
-                          <td className="px-4 py-3 text-gray-900">—</td>
+                          <td className="px-4 py-3 text-black">—</td>
                           <td className="px-4 py-3">—</td>
-                          <td className="px-4 py-3 font-bold text-gray-900">
+                          <td className="px-4 py-3 font-bold text-black">
                             {formatCurrency(totals.monthly_total)}
                           </td>
-                          <td className="px-4 py-3 font-bold text-amber-400
+                          <td className="px-4 py-3 font-bold text-blue-400
                                          text-base">
                             {formatCurrency(totals.payable)}
                           </td>

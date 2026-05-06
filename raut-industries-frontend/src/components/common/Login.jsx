@@ -53,8 +53,8 @@ export default function Login() {
       <div
         className="fixed inset-0 opacity-[0.03] pointer-events-none"
         style={{
-          backgroundImage: `linear-gradient(#f59e0b 1px, transparent 1px),
-                            linear-gradient(90deg, #f59e0b 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(#3b82f6 1px, transparent 1px),
+                            linear-gradient(90deg, #3b82f6 1px, transparent 1px)`,
           backgroundSize: '40px 40px',
         }}
       />
@@ -64,10 +64,10 @@ export default function Login() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-14 h-14
-                          bg-amber-500 rounded-2xl mb-4 shadow-lg shadow-amber-500/20">
-            <span className="text-gray-900 font-black text-xl tracking-tight">RI</span>
+                          bg-blue-500 rounded-2xl mb-4 shadow-lg shadow-blue-500/20">
+            <span className="text-white font-black text-xl tracking-tight">RI</span>
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+          <h1 className="text-2xl font-bold text-black tracking-tight">
             Raut Industries
           </h1>
           <p className="text-gray-600 text-sm mt-1">
@@ -121,7 +121,7 @@ export default function Login() {
                   type="button"
                   onClick={() => setShowPass((p) => !p)}
                   className="absolute right-3 top-1/2 -translate-y-1/2
-                             text-gray-600 hover:text-gray-900 transition-colors"
+                             text-gray-600 hover:text-black transition-colors"
                   tabIndex={-1}
                 >
                   {showPass

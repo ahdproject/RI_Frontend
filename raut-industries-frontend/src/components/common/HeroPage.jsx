@@ -53,12 +53,12 @@ export default function HeroPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16
                         flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-amber-500 flex items-center
-                            justify-center shadow-lg shadow-amber-500/20">
-              <span className="text-gray-900 font-black text-sm">RI</span>
+            <div className="w-9 h-9 rounded-xl bg-blue-500 flex items-center
+                            justify-center shadow-lg shadow-blue-500/20">
+              <span className="text-black font-black text-sm">RI</span>
             </div>
             <div>
-              <p className="font-bold text-sm text-gray-900 leading-none">
+              <p className="font-bold text-sm text-black leading-none">
                 RAUT INDUSTRIES
               </p>
               <p className="text-[10px] text-gray-600 tracking-widest uppercase">
@@ -80,19 +80,19 @@ export default function HeroPage() {
                         justify-center text-center px-4 py-20">
 
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-amber-500/10 border
-                        border-amber-500/30 rounded-full px-4 py-1.5 mb-8">
-          <Shield size={12} className="text-amber-400" />
-          <span className="text-amber-400 text-xs font-semibold tracking-wide uppercase">
+        <div className="inline-flex items-center gap-2 bg-blue-500/10 border
+                        border-blue-500/30 rounded-full px-4 py-1.5 mb-8">
+          <Shield size={12} className="text-blue-400" />
+          <span className="text-blue-400 text-xs font-semibold tracking-wide uppercase">
             Internal ERP Platform
           </span>
         </div>
 
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold
-                        text-gray-900 leading-tight tracking-tight max-w-3xl">
+                        text-black leading-tight tracking-tight max-w-3xl">
           Raut Industries
-          <span className="block text-amber-500 mt-1">
+          <span className="block text-blue-500 mt-1">
             Management System
           </span>
         </h1>
@@ -124,12 +124,12 @@ export default function HeroPage() {
               className="card p-5 text-left hover:border-gray-600
                          transition-colors group"
             >
-              <div className="w-9 h-9 rounded-lg bg-amber-500/10 border
-                              border-amber-500/20 flex items-center justify-center
-                              mb-4 group-hover:bg-amber-500/20 transition-colors">
-                <f.icon size={18} className="text-amber-400" />
+              <div className="w-9 h-9 rounded-lg bg-blue-500/10 border
+                              border-blue-500/20 flex items-center justify-center
+                              mb-4 group-hover:bg-blue-500/20 transition-colors">
+                <f.icon size={18} className="text-blue-400" />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900 mb-1.5">
+              <h3 className="text-sm font-semibold text-black mb-1.5">
                 {f.title}
               </h3>
               <p className="text-xs text-gray-600 leading-relaxed">

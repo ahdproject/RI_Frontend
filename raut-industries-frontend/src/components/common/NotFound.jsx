@@ -16,10 +16,10 @@ export default function NotFound() {
         </div>
 
         {/* Text */}
-        <h1 className="text-6xl font-black text-amber-500 mb-3">
+        <h1 className="text-6xl font-black text-blue-500 mb-3">
           404
         </h1>
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+        <h2 className="text-xl font-semibold text-black mb-2">
           Page Not Found
         </h2>
         <p className="text-gray-600 text-sm leading-relaxed mb-8">

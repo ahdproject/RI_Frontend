@@ -23,7 +23,7 @@ const Row = ({ label, value, highlight = false, border = false }) => (
                    ${border ? 'border-t border-gray-200 mt-1 pt-3' : ''}`}>
     <span className="text-xs text-gray-600">{label}</span>
     <span className={`text-sm font-semibold
-                      ${highlight ? 'text-amber-400 text-base' : 'text-gray-900'}`}>
+                      ${highlight ? 'text-blue-400 text-base' : 'text-black'}`}>
       {value}
     </span>
   </div>
@@ -93,14 +93,14 @@ export default function BillPreview() {
           <button
             onClick={() => navigate('/bills')}
             className="w-8 h-8 flex items-center justify-center rounded-lg
-                       text-gray-600 hover:text-gray-900 hover:bg-gray-100
+                       text-gray-600 hover:text-black hover:bg-gray-100
                        transition-colors"
           >
             <ArrowLeft size={16} />
           </button>
           <div>
             <div className="flex items-center gap-3">
-              <h1 className="text-xl font-bold text-gray-900">
+              <h1 className="text-xl font-bold text-black">
                 Bill #{bill.bill_no}
               </h1>
               <span className={billStatusBadge(bill.status)}>
@@ -181,7 +181,7 @@ export default function BillPreview() {
                             font-semibold mb-3">
                 Bill To
               </p>
-              <p className="font-bold text-gray-900">{bill.client_name}</p>
+              <p className="font-bold text-black">{bill.client_name}</p>
               {bill.client_address && (
                 <p className="text-xs text-gray-600 leading-relaxed">
                   {bill.client_address}
@@ -209,7 +209,7 @@ export default function BillPreview() {
               ].map((r) => (
                 <div key={r.l} className="flex justify-between text-xs">
                   <span className="text-gray-600">{r.l}</span>
-                  <span className="text-gray-900">{r.v}</span>
+                  <span className="text-black">{r.v}</span>
                 </div>
               ))}
             </div>
@@ -245,7 +245,7 @@ export default function BillPreview() {
                         {i + 1}
                       </td>
                       <td className="px-4 py-2.5">
-                        <p className="font-medium text-gray-900 text-xs">
+                        <p className="font-medium text-black text-xs">
                           {li.description || li.product_name}
                         </p>
                         <p className="text-[10px] text-gray-600">
@@ -255,13 +255,13 @@ export default function BillPreview() {
                       <td className="px-4 py-2.5 font-mono text-xs text-gray-600">
                         {li.hsn_code}
                       </td>
-                      <td className="px-4 py-2.5 text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 text-black text-xs">
                         {formatNumber(li.qty, 0)} {li.product_unit}
                       </td>
-                      <td className="px-4 py-2.5 text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 text-black text-xs">
                         ₹{formatNumber(li.rate)}
                       </td>
-                      <td className="px-4 py-2.5 font-semibold text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 font-semibold text-black text-xs">
                         {formatCurrency(li.amount)}
                       </td>
                       <td className="px-4 py-2.5 text-gray-600 text-xs">
@@ -279,7 +279,7 @@ export default function BillPreview() {
                           ? `${formatCurrency(li.igst_amount)} (${li.igst_rate}%)`
                           : '—'}
                       </td>
-                      <td className="px-4 py-2.5 font-bold text-amber-400 text-xs">
+                      <td className="px-4 py-2.5 font-bold text-blue-400 text-xs">
                         {formatCurrency(li.line_total)}
                       </td>
                     </tr>
@@ -313,13 +313,13 @@ export default function BillPreview() {
                 <tbody className="divide-y divide-zinc-800/40">
                   {bill.other_charges.map((oc) => (
                     <tr key={oc.id} className="table-row-hover">
-                      <td className="px-4 py-2.5 font-medium text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 font-medium text-black text-xs">
                         {oc.charge_type_name || oc.custom_name}
                       </td>
-                      <td className="px-4 py-2.5 text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 text-black text-xs">
                         {formatNumber(oc.qty, 0)}
                       </td>
-                      <td className="px-4 py-2.5 text-gray-900 text-xs">
+                      <td className="px-4 py-2.5 text-black text-xs">
                         ₹{formatNumber(oc.rate)}
                       </td>
                       <td className="px-4 py-2.5 font-semibold text-emerald-400 text-xs">
@@ -375,37 +375,37 @@ export default function BillPreview() {
             <div className="bg-gray-100/50 rounded-xl px-4 py-3 space-y-2">
               <div className="flex justify-between text-xs">
                 <span className="text-gray-600">Subtotal</span>
-                <span className="text-gray-900">
+                <span className="text-black">
                   {formatCurrency(bill.subtotal)}
                 </span>
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-gray-600">Other Charges</span>
-                <span className="text-gray-900">
+                <span className="text-black">
                   − {formatCurrency(bill.other_charges_total)}
                 </span>
               </div>
               <div className="flex justify-between text-xs font-semibold
                               border-t border-gray-200 pt-2">
-                <span className="text-gray-900">Difference</span>
+                <span className="text-black">Difference</span>
                 <span className="text-emerald-400">
                   {formatCurrency(bill.difference_amount)}
                 </span>
               </div>
             </div>
 
-            <div className="bg-amber-500/10 border border-amber-500/20
+            <div className="bg-blue-500/10 border border-blue-500/20
                             rounded-xl px-4 py-3 flex items-center
                             justify-between">
               <div>
-                <p className="text-xs text-amber-400 font-semibold">
+                <p className="text-xs text-blue-400 font-semibold">
                   Per Piece Value
                 </p>
-                <p className="text-[10px] text-amber-400/60 mt-0.5">
+                <p className="text-[10px] text-blue-400/60 mt-0.5">
                   Difference ÷ {formatNumber(bill.total_pieces, 0)} pcs
                 </p>
               </div>
-              <p className="text-xl font-black text-amber-400">
+              <p className="text-xl font-black text-blue-400">
                 {formatCurrency(bill.per_piece_value)}
               </p>
             </div>
@@ -424,7 +424,7 @@ export default function BillPreview() {
             ].map((r) => (
               <div key={r.l} className="flex justify-between text-xs">
                 <span className="text-gray-600">{r.l}</span>
-                <span className="text-gray-900 capitalize">{r.v}</span>
+                <span className="text-black capitalize">{r.v}</span>
               </div>
             ))}
           </div>

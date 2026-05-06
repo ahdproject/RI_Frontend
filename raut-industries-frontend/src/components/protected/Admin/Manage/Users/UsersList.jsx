@@ -18,7 +18,7 @@ const RoleBadge = ({ role }) => {
   const map = {
     SuperAdmin: 'bg-purple-500/20 text-purple-400 border-purple-500/30',
     Admin:      'bg-blue-500/20   text-blue-400   border-blue-500/30',
-    Manager:    'bg-amber-500/20  text-amber-400  border-amber-500/30',
+    Manager:    'bg-blue-500/20  text-blue-400  border-blue-500/30',
   }
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded-full
@@ -152,10 +152,10 @@ export default function UsersList() {
                           </span>
                         </div>
                         <div>
-                          <p className="font-semibold text-gray-900">
+                          <p className="font-semibold text-black">
                             {u.name}
                             {u.id === currentUser?.id && (
-                              <span className="ml-2 text-[10px] text-amber-400
+                              <span className="ml-2 text-[10px] text-blue-400
                                                font-normal">
                                 (you)
                               </span>
@@ -189,8 +189,8 @@ export default function UsersList() {
                             navigate(`/admin/users/${u.id}/edit`)
                           }
                           className="w-7 h-7 flex items-center justify-center
-                                     rounded-lg text-gray-600 hover:text-amber-400
-                                     hover:bg-amber-500/10 transition-colors"
+                                     rounded-lg text-gray-600 hover:text-blue-400
+                                     hover:bg-blue-500/10 transition-colors"
                           title="Edit"
                         >
                           <Pencil size={13} />
