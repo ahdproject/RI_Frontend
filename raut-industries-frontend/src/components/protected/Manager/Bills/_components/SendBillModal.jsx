@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import BillsRepo from '../../../../services/repository/Manager/BillsRepo'
-import { extractError } from '../../../../utils/helpers'
+import BillsRepo from '../../../../../services/repository/Manager/BillsRepo'
+import { extractError } from '../../../../../utils/helpers'
 
 export default function SendBillModal({ isOpen, onClose, billId, billNumber }) {
   const [email, setEmail] = useState('devanshudandekar5@gmail.com')

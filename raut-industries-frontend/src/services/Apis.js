@@ -57,6 +57,20 @@ const Apis = {
   reportSales:      '/reports/sales',
   reportAttendance: '/reports/attendance',
   sendReportEmail:  '/reports/send-email',
+
+  // ── BMS Integration ─────────────────────────────────────────
+  bms:                '/bms',
+  bmsClients:         '/bms/clients',
+  bmsClientById:      (id) => `/bms/clients/${id}`,
+  bmsInvoices:        '/bms/invoices',
+  bmsInvoiceById:     (id) => `/bms/invoices/${id}`,
+  bmsSendInvoice:     (id) => `/bms/invoices/${id}/send`,
+  bmsInvoicePdf:      (id) => `/bms/invoices/${id}/pdf`,
+  bmsPayments:        '/bms/payments',
+  bmsPaymentModes:    '/bms/payment-modes',
+  bmsTemplates:       '/bms/templates',
+  bmsTaxRates:        '/bms/tax-rates',
+  bmsParticulars:     '/bms/particulars',
 }
 
 export default Apis

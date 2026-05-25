@@ -20,6 +20,7 @@ import {
   Package,
   UserSquare2,
   Landmark,
+  CreditCard,
 } from 'lucide-react'
 import {
   clearUser,
@@ -93,6 +94,16 @@ const getNavItems = (user) => {
       ],
     })
   }
+
+  // BMS Integration — Manager and above
+  items.push({
+    label: 'BMS',
+    icon: CreditCard,
+    children: [
+      { label: 'BMS Invoices', path: '/bms/invoices', icon: Receipt },
+      { label: 'BMS Clients',  path: '/bms/clients',  icon: Building2 },
+    ],
+  })
 
   // User Management — SuperAdmin only
   if (isSuperAdmin) {

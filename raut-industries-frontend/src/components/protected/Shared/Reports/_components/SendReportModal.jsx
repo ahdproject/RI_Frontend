@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import ReportsRepo from '../../../../services/repository/Shared/ReportsRepo'
-import { extractError } from '../../../../utils/helpers'
+import ReportsRepo from '../../../../../services/repository/Shared/ReportsRepo'
+import { extractError } from '../../../../../utils/helpers'
 
 export default function SendReportModal({ isOpen, onClose, reportType, month, year, reportName }) {
   const [email, setEmail] = useState('devanshudandekar5@gmail.com')

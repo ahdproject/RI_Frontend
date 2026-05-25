@@ -41,6 +41,10 @@ import GstReport        from './components/protected/Shared/Reports/GstReport'
 import SalesReport      from './components/protected/Shared/Reports/SalesReport'
 import AttendanceReport from './components/protected/Shared/Reports/AttendanceReport'
 
+// ── BMS Integration
+import BmsInvoices from './components/protected/Manager/Bms/BmsInvoices'
+import BmsClients  from './components/protected/Manager/Bms/BmsClients'
+
 // ─── Protected Route Wrapper ──────────────────────────────────
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
@@ -274,6 +278,18 @@ export default function RoutesConfig() {
         <Route path="/attendance/summary" element={
           <ProtectedRoute allowedRoles={[ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.MANAGER]}>
             <AppShell><AttendanceSummary /></AppShell>
+          </ProtectedRoute>
+        } />
+
+        {/* ── BMS Integration ─────────────────────────────── */}
+        <Route path="/bms/invoices" element={
+          <ProtectedRoute allowedRoles={[ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.MANAGER]}>
+            <AppShell><BmsInvoices /></AppShell>
+          </ProtectedRoute>
+        } />
+        <Route path="/bms/clients" element={
+          <ProtectedRoute allowedRoles={[ROLES.SUPER_ADMIN, ROLES.ADMIN, ROLES.MANAGER]}>
+            <AppShell><BmsClients /></AppShell>
           </ProtectedRoute>
         } />
 
