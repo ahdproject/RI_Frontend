@@ -82,28 +82,29 @@ const AppShell = ({ children }) => {
 
 export default function RoutesConfig() {
   const isAuthenticated = useSelector(selectIsAuthenticated)
+  const user = useSelector(selectUser)
 
+  // If not authenticated, only render login/auth routes
+  if (!isAuthenticated) {
+    return (
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HeroPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    )
+  }
+
+  // If authenticated, render full app with protected routes
   return (
     <BrowserRouter>
       <Routes>
 
-        {/* ── Public ─────────────────────────────────────── */}
-        <Route
-          path="/"
-          element={
-            isAuthenticated
-              ? <Navigate to="/dashboard" replace />
-              : <HeroPage />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            isAuthenticated
-              ? <Navigate to="/dashboard" replace />
-              : <Login />
-          }
-        />
+        {/* ── Public → redirect to dashboard ─────────────── */}
+        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/login" element={<Navigate to="/dashboard" replace />} />
 
         {/* ── Shared — All Authenticated Roles ───────────── */}
         <Route path="/dashboard" element={
@@ -245,7 +246,7 @@ export default function RoutesConfig() {
           </ProtectedRoute>
         } />
 
-        {/* ── Manager + Admin + SuperAdmin ────────────────── */}
+        {/* ── Manager + Admin + SuperAdmin ────────────────– */}
 
         {/* Bills */}
         <Route path="/bills" element={
