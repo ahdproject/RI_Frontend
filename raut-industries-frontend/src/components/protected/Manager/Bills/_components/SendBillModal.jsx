@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Send, X, CheckCircle, Loader2 } from 'lucide-react'
 import Connector from '../../../../../services/Connector'
 import Apis from '../../../../../services/Apis'

@@ -1,59 +1,30 @@
 import axios from 'axios'
-import store from '../app/store'
-import { clearUser } from '../app/DashboardSlice'
 
-// ─── Base Axios Instance ──────────────────────────────────────
+const BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000'
 
 const Connector = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  timeout: 15000,
+  baseURL: BASE,
+  headers: { 'Content-Type': 'application/json' },
 })
 
-// ─── Request Interceptor ──────────────────────────────────────
-// Attaches JWT token to every request automatically
-
-Connector.interceptors.request.use(
-  (config) => {
-    // Try Redux store first
-    const state = store.getState()
-    let token = state.dashboard.token
-    
-    // If not in Redux, try localStorage (for app initialization before Redux hydration)
-    if (!token) {
-      token = localStorage.getItem('raut_token')
-    }
-
-    if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`
-    }
-
-    return config
-  },
-  (error) => {
-    return Promise.reject(error)
-  }
-)
-
-// ─── Response Interceptor ─────────────────────────────────────
-// Handles 401 globally — clears session and redirects to login
+// ✅ Read BOTH token keys — Raut uses 'access_token', legacy uses 'md_token'
+Connector.interceptors.request.use((config) => {
+  const token =
+    localStorage.getItem('access_token') ||   // Raut auth stores here
+    localStorage.getItem('md_token')          // fallback
+  if (token) config.headers.Authorization = `Bearer ${token}`
+  return config
+})
 
 Connector.interceptors.response.use(
-  (response) => {
-    return response
-  },
-  (error) => {
-    if (error.response?.status === 401) {
-      // Token expired or invalid — clear redux + redirect
-      store.dispatch(clearUser())
-      localStorage.removeItem('raut_token')
-      localStorage.removeItem('raut_user')
+  (res) => res,
+  (err) => {
+    if (err.response?.status === 401) {
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('md_token')
       window.location.href = '/login'
     }
-
-    return Promise.reject(error)
+    return Promise.reject(err)
   }
 )
 
