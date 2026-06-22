@@ -48,7 +48,7 @@ const getNavItems = (user) => {
 
   // Bills — Manager and above
   items.push({
-    label: 'Bills',
+    label: 'Reports',
     icon: FileText,
     path: '/bills',
   })
